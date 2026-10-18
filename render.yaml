@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: ghosttrace-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: MONGODB_DATABASE
+        value: ghosttrace
+      - key: MONGODB_URI
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: LIVE_INGESTION_ENABLED
+        value: "true"
+      - key: LIVE_SIMULATOR_ENABLED
+        value: "true"
+      - key: TRACECHAIN_DIFFICULTY
+        value: "2"
+      - key: ML_ACTIVE_THRESHOLD
+        value: "0.42"

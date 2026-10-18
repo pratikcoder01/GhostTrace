@@ -25,8 +25,11 @@ logger = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     # Startup tasks
     logger.info("Initializing GhostTrace MongoDB connection and indexes...")
-    connect_mongodb()
-    init_db()
+    try:
+        connect_mongodb()
+        init_db()
+    except Exception as e:
+        logger.error(f"MongoDB connection notice during startup: {e}. Running in degraded mode until connectivity is restored.")
 
     logger.info("Initializing TraceChain audit ledger...")
     TraceChainStorage.load_or_init_chain()
@@ -92,7 +95,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include API Routers under /api
+# Include API Routers under /api and root health
+app.include_router(health.router)
 app.include_router(health.router, prefix=settings.API_V1_STR)
 app.include_router(data_sources.router, prefix=settings.API_V1_STR)
 app.include_router(cases.router, prefix=settings.API_V1_STR)
