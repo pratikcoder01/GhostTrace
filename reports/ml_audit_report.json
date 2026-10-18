@@ -1,0 +1,533 @@
+{
+  "generated_at": "2026-10-17T20:26:49.492596+00:00",
+  "dataset": "elliptic",
+  "total_labeled_samples": 46564,
+  "champion_model": "RandomForest",
+  "version": "v1.1.0",
+  "optimal_threshold": 0.42,
+  "split_details": {
+    "split_method": "3-way chronological time_step partition",
+    "train_time_steps": "1 to 28",
+    "train_samples": 25207,
+    "train_illicit": 2542,
+    "train_licit": 22665,
+    "val_time_steps": "29 to 34",
+    "val_samples": 4687,
+    "val_illicit": 920,
+    "val_licit": 3767,
+    "test_time_steps": "35 to 49",
+    "test_samples": 16670,
+    "test_illicit": 1083,
+    "test_licit": 15587,
+    "test_prevalence": 0.065
+  },
+  "validation_comparison": {
+    "DummyBaseline": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.0,
+      "illicit_recall": 0.0,
+      "illicit_f1": 0.0,
+      "licit_precision": 0.8037,
+      "licit_recall": 1.0,
+      "licit_f1": 0.8912,
+      "accuracy": 0.8037,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.4456,
+      "confusion_matrix": {
+        "true_negatives": 3767,
+        "false_positives": 0,
+        "false_negatives": 920,
+        "true_positives": 0
+      },
+      "class_distribution": {
+        "total_samples": 4687,
+        "illicit_count": 920,
+        "licit_count": 3767,
+        "positive_prevalence": 0.1963
+      },
+      "average_precision": 0.1963,
+      "pr_auc_trapezoidal": 0.5981,
+      "roc_auc": 0.5
+    },
+    "LogisticRegression": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.3993,
+      "illicit_recall": 0.9826,
+      "illicit_f1": 0.5678,
+      "licit_precision": 0.9934,
+      "licit_recall": 0.639,
+      "licit_f1": 0.7777,
+      "accuracy": 0.7064,
+      "balanced_accuracy": 0.8108,
+      "macro_f1": 0.6728,
+      "confusion_matrix": {
+        "true_negatives": 2407,
+        "false_positives": 1360,
+        "false_negatives": 16,
+        "true_positives": 904
+      },
+      "class_distribution": {
+        "total_samples": 4687,
+        "illicit_count": 920,
+        "licit_count": 3767,
+        "positive_prevalence": 0.1963
+      },
+      "average_precision": 0.577,
+      "pr_auc_trapezoidal": 0.5773,
+      "roc_auc": 0.8916
+    },
+    "RandomForest": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.986,
+      "illicit_recall": 0.9174,
+      "illicit_f1": 0.9505,
+      "licit_precision": 0.9802,
+      "licit_recall": 0.9968,
+      "licit_f1": 0.9884,
+      "accuracy": 0.9812,
+      "balanced_accuracy": 0.9571,
+      "macro_f1": 0.9694,
+      "confusion_matrix": {
+        "true_negatives": 3755,
+        "false_positives": 12,
+        "false_negatives": 76,
+        "true_positives": 844
+      },
+      "class_distribution": {
+        "total_samples": 4687,
+        "illicit_count": 920,
+        "licit_count": 3767,
+        "positive_prevalence": 0.1963
+      },
+      "average_precision": 0.9837,
+      "pr_auc_trapezoidal": 0.9844,
+      "roc_auc": 0.9936
+    },
+    "XGBoost": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.9438,
+      "illicit_recall": 0.9315,
+      "illicit_f1": 0.9376,
+      "licit_precision": 0.9833,
+      "licit_recall": 0.9865,
+      "licit_f1": 0.9849,
+      "accuracy": 0.9757,
+      "balanced_accuracy": 0.959,
+      "macro_f1": 0.9613,
+      "confusion_matrix": {
+        "true_negatives": 3716,
+        "false_positives": 51,
+        "false_negatives": 63,
+        "true_positives": 857
+      },
+      "class_distribution": {
+        "total_samples": 4687,
+        "illicit_count": 920,
+        "licit_count": 3767,
+        "positive_prevalence": 0.1963
+      },
+      "average_precision": 0.9766,
+      "pr_auc_trapezoidal": 0.9761,
+      "roc_auc": 0.995
+    },
+    "HistGradientBoosting": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.952,
+      "illicit_recall": 0.9261,
+      "illicit_f1": 0.9388,
+      "licit_precision": 0.9821,
+      "licit_recall": 0.9886,
+      "licit_f1": 0.9853,
+      "accuracy": 0.9763,
+      "balanced_accuracy": 0.9573,
+      "macro_f1": 0.9621,
+      "confusion_matrix": {
+        "true_negatives": 3724,
+        "false_positives": 43,
+        "false_negatives": 68,
+        "true_positives": 852
+      },
+      "class_distribution": {
+        "total_samples": 4687,
+        "illicit_count": 920,
+        "licit_count": 3767,
+        "positive_prevalence": 0.1963
+      },
+      "average_precision": 0.9804,
+      "pr_auc_trapezoidal": 0.9803,
+      "roc_auc": 0.995
+    }
+  },
+  "held_out_test_comparison_default": {
+    "DummyBaseline": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.0,
+      "illicit_recall": 0.0,
+      "illicit_f1": 0.0,
+      "licit_precision": 0.935,
+      "licit_recall": 1.0,
+      "licit_f1": 0.9664,
+      "accuracy": 0.935,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.4832,
+      "confusion_matrix": {
+        "true_negatives": 15587,
+        "false_positives": 0,
+        "false_negatives": 1083,
+        "true_positives": 0
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.065,
+      "pr_auc_trapezoidal": 0.5325,
+      "roc_auc": 0.5
+    },
+    "LogisticRegression": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.1345,
+      "illicit_recall": 0.9566,
+      "illicit_f1": 0.2358,
+      "licit_precision": 0.9948,
+      "licit_recall": 0.5721,
+      "licit_f1": 0.7265,
+      "accuracy": 0.5971,
+      "balanced_accuracy": 0.7644,
+      "macro_f1": 0.4811,
+      "confusion_matrix": {
+        "true_negatives": 8918,
+        "false_positives": 6669,
+        "false_negatives": 47,
+        "true_positives": 1036
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.1982,
+      "pr_auc_trapezoidal": 0.2008,
+      "roc_auc": 0.8455
+    },
+    "RandomForest": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.9481,
+      "illicit_recall": 0.6408,
+      "illicit_f1": 0.7647,
+      "licit_precision": 0.9756,
+      "licit_recall": 0.9976,
+      "licit_f1": 0.9865,
+      "accuracy": 0.9744,
+      "balanced_accuracy": 0.8192,
+      "macro_f1": 0.8756,
+      "confusion_matrix": {
+        "true_negatives": 15549,
+        "false_positives": 38,
+        "false_negatives": 389,
+        "true_positives": 694
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.7652,
+      "pr_auc_trapezoidal": 0.7682,
+      "roc_auc": 0.917
+    },
+    "XGBoost": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.7411,
+      "illicit_recall": 0.7082,
+      "illicit_f1": 0.7243,
+      "licit_precision": 0.9798,
+      "licit_recall": 0.9828,
+      "licit_f1": 0.9813,
+      "accuracy": 0.965,
+      "balanced_accuracy": 0.8455,
+      "macro_f1": 0.8528,
+      "confusion_matrix": {
+        "true_negatives": 15319,
+        "false_positives": 268,
+        "false_negatives": 316,
+        "true_positives": 767
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.7819,
+      "pr_auc_trapezoidal": 0.7819,
+      "roc_auc": 0.9328
+    },
+    "HistGradientBoosting": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.8004,
+      "illicit_recall": 0.6888,
+      "illicit_f1": 0.7404,
+      "licit_precision": 0.9786,
+      "licit_recall": 0.9881,
+      "licit_f1": 0.9833,
+      "accuracy": 0.9686,
+      "balanced_accuracy": 0.8384,
+      "macro_f1": 0.8619,
+      "confusion_matrix": {
+        "true_negatives": 15401,
+        "false_positives": 186,
+        "false_negatives": 337,
+        "true_positives": 746
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.777,
+      "pr_auc_trapezoidal": 0.7769,
+      "roc_auc": 0.9376
+    }
+  },
+  "held_out_test_comparison_tuned": {
+    "DummyBaseline": {
+      "threshold_applied": 0.5,
+      "illicit_precision": 0.0,
+      "illicit_recall": 0.0,
+      "illicit_f1": 0.0,
+      "licit_precision": 0.935,
+      "licit_recall": 1.0,
+      "licit_f1": 0.9664,
+      "accuracy": 0.935,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.4832,
+      "confusion_matrix": {
+        "true_negatives": 15587,
+        "false_positives": 0,
+        "false_negatives": 1083,
+        "true_positives": 0
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.065,
+      "pr_auc_trapezoidal": 0.5325,
+      "roc_auc": 0.5
+    },
+    "LogisticRegression": {
+      "threshold_applied": 0.83,
+      "illicit_precision": 0.1487,
+      "illicit_recall": 0.916,
+      "illicit_f1": 0.2559,
+      "licit_precision": 0.9909,
+      "licit_recall": 0.6357,
+      "licit_f1": 0.7745,
+      "accuracy": 0.6539,
+      "balanced_accuracy": 0.7758,
+      "macro_f1": 0.5152,
+      "confusion_matrix": {
+        "true_negatives": 9909,
+        "false_positives": 5678,
+        "false_negatives": 91,
+        "true_positives": 992
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.1982,
+      "pr_auc_trapezoidal": 0.2008,
+      "roc_auc": 0.8455
+    },
+    "RandomForest": {
+      "threshold_applied": 0.42,
+      "illicit_precision": 0.8276,
+      "illicit_recall": 0.6916,
+      "illicit_f1": 0.7535,
+      "licit_precision": 0.9788,
+      "licit_recall": 0.99,
+      "licit_f1": 0.9844,
+      "accuracy": 0.9706,
+      "balanced_accuracy": 0.8408,
+      "macro_f1": 0.8689,
+      "confusion_matrix": {
+        "true_negatives": 15431,
+        "false_positives": 156,
+        "false_negatives": 334,
+        "true_positives": 749
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.7652,
+      "pr_auc_trapezoidal": 0.7682,
+      "roc_auc": 0.917
+    },
+    "XGBoost": {
+      "threshold_applied": 0.53,
+      "illicit_precision": 0.769,
+      "illicit_recall": 0.7008,
+      "illicit_f1": 0.7333,
+      "licit_precision": 0.9793,
+      "licit_recall": 0.9854,
+      "licit_f1": 0.9823,
+      "accuracy": 0.9669,
+      "balanced_accuracy": 0.8431,
+      "macro_f1": 0.8578,
+      "confusion_matrix": {
+        "true_negatives": 15359,
+        "false_positives": 228,
+        "false_negatives": 324,
+        "true_positives": 759
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.7819,
+      "pr_auc_trapezoidal": 0.7819,
+      "roc_auc": 0.9328
+    },
+    "HistGradientBoosting": {
+      "threshold_applied": 0.66,
+      "illicit_precision": 0.8785,
+      "illicit_recall": 0.6676,
+      "illicit_f1": 0.7587,
+      "licit_precision": 0.9773,
+      "licit_recall": 0.9936,
+      "licit_f1": 0.9854,
+      "accuracy": 0.9724,
+      "balanced_accuracy": 0.8306,
+      "macro_f1": 0.872,
+      "confusion_matrix": {
+        "true_negatives": 15487,
+        "false_positives": 100,
+        "false_negatives": 360,
+        "true_positives": 723
+      },
+      "class_distribution": {
+        "total_samples": 16670,
+        "illicit_count": 1083,
+        "licit_count": 15587,
+        "positive_prevalence": 0.065
+      },
+      "average_precision": 0.777,
+      "pr_auc_trapezoidal": 0.7769,
+      "roc_auc": 0.9376
+    }
+  },
+  "top_features": [
+    {
+      "rank": 1,
+      "feature_name": "feature_48",
+      "feature_index": 46,
+      "importance": 0.078383
+    },
+    {
+      "rank": 2,
+      "feature_name": "feature_56",
+      "feature_index": 54,
+      "importance": 0.061141
+    },
+    {
+      "rank": 3,
+      "feature_name": "feature_50",
+      "feature_index": 48,
+      "importance": 0.056728
+    },
+    {
+      "rank": 4,
+      "feature_name": "feature_42",
+      "feature_index": 40,
+      "importance": 0.046618
+    },
+    {
+      "rank": 5,
+      "feature_name": "feature_44",
+      "feature_index": 42,
+      "importance": 0.041493
+    },
+    {
+      "rank": 6,
+      "feature_name": "feature_91",
+      "feature_index": 89,
+      "importance": 0.037398
+    },
+    {
+      "rank": 7,
+      "feature_name": "feature_6",
+      "feature_index": 4,
+      "importance": 0.033597
+    },
+    {
+      "rank": 8,
+      "feature_name": "feature_54",
+      "feature_index": 52,
+      "importance": 0.0312
+    },
+    {
+      "rank": 9,
+      "feature_name": "feature_19",
+      "feature_index": 17,
+      "importance": 0.028331
+    },
+    {
+      "rank": 10,
+      "feature_name": "feature_3",
+      "feature_index": 1,
+      "importance": 0.027818
+    },
+    {
+      "rank": 11,
+      "feature_name": "feature_15",
+      "feature_index": 13,
+      "importance": 0.023398
+    },
+    {
+      "rank": 12,
+      "feature_name": "feature_24",
+      "feature_index": 22,
+      "importance": 0.02069
+    },
+    {
+      "rank": 13,
+      "feature_name": "feature_139",
+      "feature_index": 137,
+      "importance": 0.019475
+    },
+    {
+      "rank": 14,
+      "feature_name": "feature_53",
+      "feature_index": 51,
+      "importance": 0.01801
+    },
+    {
+      "rank": 15,
+      "feature_name": "feature_143",
+      "feature_index": 141,
+      "importance": 0.01523
+    }
+  ],
+  "dummy_baseline_audit": {
+    "dummy_accuracy": 0.935,
+    "dummy_average_precision": 0.065,
+    "dummy_pr_auc_trapezoidal": 0.5325,
+    "explanation": "The dummy classifier always predicts the licit majority class (0). Its high accuracy (93.50%) is deceptive because the test set contains only 6.50% illicit transactions. Its genuine Average Precision is 0.0650 (exactly equal to test positive prevalence). The previously reported 0.5325 was a known mathematical artifact of the trapezoidal rule connecting (recall=1, precision=0.065) to (recall=0, precision=1.0) artificially."
+  }
+}

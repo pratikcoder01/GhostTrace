@@ -1,0 +1,334 @@
+{
+  "scenario_id": "SIM_GHOST_ATTACK_042",
+  "scenario_name": "Operation Phantom Drain (Simulated Ghost Attack)",
+  "disclaimer": "SIMULATED DATASET ONLY. FOR FORENSIC BENCHMARKING AND TESTING. NOT A REAL WORLD INCIDENT.",
+  "network": "simulated",
+  "victim_address": "0xSIM_VICTIM_VAULT_01",
+  "compromised_timestamp": "2026-10-10T08:00:00Z",
+  "planted_osint": [
+    {
+      "indicator_id": "OSINT-SIM-001",
+      "indicator_type": "address",
+      "indicator_value": "0xSIM_ATTACKER_INFILTRATOR",
+      "network": "simulated",
+      "category": "Phishing / Malware Exploit",
+      "subcategory": "Ghost-ThreatGroup-2026 Infiltration",
+      "description": "Flagged in simulated threat intelligence feed as primary collection wallet for Pegasus-linked cyber intrusion.",
+      "source_name": "Simulated Cyber Threat Intel Feed",
+      "source_url": "https://threat-intel.local/advisories/GH-2026-0042",
+      "first_seen": "2026-10-09T14:00:00Z",
+      "retrieved_at": "2026-10-10T08:05:00Z",
+      "provenance": "Simulated Benchmark Dataset"
+    },
+    {
+      "indicator_id": "OSINT-SIM-002",
+      "indicator_type": "address",
+      "indicator_value": "0xSIM_MIXER_HOP2_WASH_1",
+      "network": "simulated",
+      "category": "Money Laundering / Mixer",
+      "subcategory": "Tumbling Service Intermediary",
+      "description": "Simulated darknet mixing hub deposit address.",
+      "source_name": "CryptoScamDB-Simulated",
+      "source_url": "https://cryptoscamdb.org/scam/sim-mixer-wash-1",
+      "first_seen": "2026-10-01T12:00:00Z",
+      "retrieved_at": "2026-10-10T09:00:00Z",
+      "provenance": "CryptoScamDB Benchmark Fixture"
+    },
+    {
+      "indicator_id": "OSINT-SIM-003",
+      "indicator_type": "domain",
+      "indicator_value": "phantom-drain-stealer.xyz",
+      "network": "simulated",
+      "category": "Phishing",
+      "subcategory": "Credential Harvester",
+      "description": "Malicious dApp frontend used in Pegasus zero-click credential compromise.",
+      "source_name": "Pegasus Threat IOC Feed",
+      "source_url": "https://osint-intel.local/domains/phantom-drain",
+      "first_seen": "2026-10-05T00:00:00Z",
+      "retrieved_at": "2026-10-10T08:00:00Z",
+      "provenance": "Simulated Benchmark Dataset"
+    }
+  ],
+  "expected_attack_path": [
+    "0xSIM_VICTIM_VAULT_01",
+    "0xSIM_ATTACKER_INFILTRATOR",
+    "0xSIM_MULE_HOP1_A",
+    "0xSIM_MIXER_HOP2_WASH_1",
+    "0xSIM_CROSS_CHAIN_BRIDGE_GATE",
+    "0xSIM_EXCHANGE_HOT_WALLET_EXIT"
+  ],
+  "transactions": [
+    {
+      "tx_id": "tx_sim_drain_01",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:05:00Z",
+      "from_address": "0xSIM_VICTIM_VAULT_01",
+      "to_address": "0xSIM_ATTACKER_INFILTRATOR",
+      "amount": 200.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000001,
+      "tx_hash": "0xsim_drain_hash_001",
+      "fee": 0.002,
+      "extra_metadata": {
+        "pattern": "initial_compromise_drain",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_drain_02",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:07:30Z",
+      "from_address": "0xSIM_VICTIM_VAULT_01",
+      "to_address": "0xSIM_ATTACKER_INFILTRATOR",
+      "amount": 50.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000002,
+      "tx_hash": "0xsim_drain_hash_002",
+      "fee": 0.002,
+      "extra_metadata": {
+        "pattern": "sweeper_drain",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_split_01",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:15:00Z",
+      "from_address": "0xSIM_ATTACKER_INFILTRATOR",
+      "to_address": "0xSIM_MULE_HOP1_A",
+      "amount": 62.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000010,
+      "tx_hash": "0xsim_split_hash_001",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_out_peeling",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_split_02",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:15:20Z",
+      "from_address": "0xSIM_ATTACKER_INFILTRATOR",
+      "to_address": "0xSIM_MULE_HOP1_B",
+      "amount": 62.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000011,
+      "tx_hash": "0xsim_split_hash_002",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_out_peeling_burst",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_split_03",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:15:45Z",
+      "from_address": "0xSIM_ATTACKER_INFILTRATOR",
+      "to_address": "0xSIM_MULE_HOP1_C",
+      "amount": 62.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000012,
+      "tx_hash": "0xsim_split_hash_003",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_out_peeling_burst",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_split_04",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:16:10Z",
+      "from_address": "0xSIM_ATTACKER_INFILTRATOR",
+      "to_address": "0xSIM_MULE_HOP1_D",
+      "amount": 62.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000013,
+      "tx_hash": "0xsim_split_hash_004",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_out_peeling_burst",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_layer_01",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:45:00Z",
+      "from_address": "0xSIM_MULE_HOP1_A",
+      "to_address": "0xSIM_MIXER_HOP2_WASH_1",
+      "amount": 61.5,
+      "asset": "SIM-ETH",
+      "block_number": 1000050,
+      "tx_hash": "0xsim_layer_hash_001",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_in_aggregation",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_layer_02",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:46:15Z",
+      "from_address": "0xSIM_MULE_HOP1_B",
+      "to_address": "0xSIM_MIXER_HOP2_WASH_1",
+      "amount": 61.5,
+      "asset": "SIM-ETH",
+      "block_number": 1000052,
+      "tx_hash": "0xsim_layer_hash_002",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_in_aggregation",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_layer_03",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:50:00Z",
+      "from_address": "0xSIM_MULE_HOP1_C",
+      "to_address": "0xSIM_MIXER_HOP2_WASH_2",
+      "amount": 61.5,
+      "asset": "SIM-ETH",
+      "block_number": 1000060,
+      "tx_hash": "0xsim_layer_hash_003",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_in_aggregation",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_layer_04",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:51:30Z",
+      "from_address": "0xSIM_MULE_HOP1_D",
+      "to_address": "0xSIM_MIXER_HOP2_WASH_2",
+      "amount": 61.5,
+      "asset": "SIM-ETH",
+      "block_number": 1000062,
+      "tx_hash": "0xsim_layer_hash_004",
+      "fee": 0.001,
+      "extra_metadata": {
+        "pattern": "fan_in_aggregation",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_exit_01",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T09:30:00Z",
+      "from_address": "0xSIM_MIXER_HOP2_WASH_1",
+      "to_address": "0xSIM_CROSS_CHAIN_BRIDGE_GATE",
+      "amount": 122.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000100,
+      "tx_hash": "0xsim_exit_hash_001",
+      "fee": 0.005,
+      "extra_metadata": {
+        "pattern": "bridge_obfuscation",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_exit_02",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T09:45:00Z",
+      "from_address": "0xSIM_MIXER_HOP2_WASH_2",
+      "to_address": "0xSIM_EXCHANGE_HOT_WALLET_EXIT",
+      "amount": 122.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000120,
+      "tx_hash": "0xsim_exit_hash_002",
+      "fee": 0.005,
+      "extra_metadata": {
+        "pattern": "exchange_liquidation_deposit",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_exit_03",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T10:00:00Z",
+      "from_address": "0xSIM_CROSS_CHAIN_BRIDGE_GATE",
+      "to_address": "0xSIM_EXCHANGE_HOT_WALLET_EXIT",
+      "amount": 121.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000150,
+      "tx_hash": "0xsim_exit_hash_003",
+      "fee": 0.008,
+      "extra_metadata": {
+        "pattern": "bridge_exit_to_exchange",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_decoy_01",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:20:00Z",
+      "from_address": "0xSIM_BENIGN_CUSTOMER_A",
+      "to_address": "0xSIM_BENIGN_MERCHANT",
+      "amount": 1.5,
+      "asset": "SIM-ETH",
+      "block_number": 1000015,
+      "tx_hash": "0xsim_decoy_hash_001",
+      "fee": 0.0001,
+      "extra_metadata": {
+        "pattern": "benign_decoy_commerce",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_decoy_02",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T08:25:00Z",
+      "from_address": "0xSIM_BENIGN_CUSTOMER_B",
+      "to_address": "0xSIM_BENIGN_MERCHANT",
+      "amount": 2.0,
+      "asset": "SIM-ETH",
+      "block_number": 1000020,
+      "tx_hash": "0xsim_decoy_hash_002",
+      "fee": 0.0001,
+      "extra_metadata": {
+        "pattern": "benign_decoy_commerce",
+        "simulated": true
+      }
+    },
+    {
+      "tx_id": "tx_sim_decoy_03",
+      "network": "simulated",
+      "data_origin": "synthetic",
+      "timestamp": "2026-10-10T09:10:00Z",
+      "from_address": "0xSIM_BENIGN_MERCHANT",
+      "to_address": "0xSIM_BENIGN_STAKING_POOL",
+      "amount": 3.2,
+      "asset": "SIM-ETH",
+      "block_number": 1000075,
+      "tx_hash": "0xsim_decoy_hash_003",
+      "fee": 0.0002,
+      "extra_metadata": {
+        "pattern": "benign_decoy_staking",
+        "simulated": true
+      }
+    }
+  ]
+}

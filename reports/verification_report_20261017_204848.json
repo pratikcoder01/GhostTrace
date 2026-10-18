@@ -1,0 +1,567 @@
+{
+  "task1_artifacts": {
+    "audit_report_exists": true,
+    "audit_generated_at": "2026-10-17T20:43:05.483541+00:00",
+    "model_file": "model_randomforest_v1.1.0.joblib",
+    "model_size_bytes": 5263355,
+    "model_md5": "6b607a13234f2603a9132f424edb8c18",
+    "version": "v1.1.0",
+    "algorithm": "RandomForest",
+    "threshold": 0.42,
+    "features_count": 165,
+    "feature_names_first5": [
+      "feature_2",
+      "feature_3",
+      "feature_4",
+      "feature_5",
+      "feature_6"
+    ],
+    "feature_names_last5": [
+      "feature_162",
+      "feature_163",
+      "feature_164",
+      "feature_165",
+      "feature_166"
+    ],
+    "metadata_json_consistent": true,
+    "split_from_metadata": {
+      "train": "1 to 28",
+      "val": "29 to 34",
+      "test": "35 to 49"
+    }
+  },
+  "task2_metrics": {
+    "sklearn_version": "1.9.1",
+    "positive_label": "1 = illicit",
+    "test_n": 16670,
+    "test_illicit": 1083,
+    "test_licit": 15587,
+    "feature_order_match_vs_bundle": true,
+    "metrics_050": {
+      "threshold": 0.5,
+      "TN": 15549,
+      "FP": 38,
+      "FN": 389,
+      "TP": 694,
+      "illicit_precision": 0.9480874316939891,
+      "illicit_recall": 0.6408125577100646,
+      "illicit_f1": 0.7647382920110193,
+      "licit_precision": 0.9755929225749781,
+      "licit_recall": 0.9975620709565663,
+      "licit_f1": 0.9864551942902459,
+      "accuracy": 0.9743851229754049,
+      "balanced_accuracy": 0.8191873143333155,
+      "macro_f1": 0.8755967431506326,
+      "average_precision": 0.7652272415513216,
+      "pr_auc_trap": 0.7681825222518496,
+      "roc_auc": 0.9170090246737684
+    },
+    "metrics_042": {
+      "threshold": 0.42,
+      "TN": 15431,
+      "FP": 156,
+      "FN": 334,
+      "TP": 749,
+      "illicit_precision": 0.8276243093922652,
+      "illicit_recall": 0.6915974145891043,
+      "illicit_f1": 0.7535211267605634,
+      "licit_precision": 0.978813828100222,
+      "licit_recall": 0.9899916597164303,
+      "licit_f1": 0.9843710130135238,
+      "accuracy": 0.9706058788242351,
+      "balanced_accuracy": 0.8407945371527673,
+      "macro_f1": 0.8689460698870436,
+      "average_precision": 0.7652272415513216,
+      "pr_auc_trap": 0.7681825222518496,
+      "roc_auc": 0.9170090246737684
+    },
+    "all_checks_vs_saved_audit_pass": true
+  },
+  "task3_prevalence": {
+    "test_illicit": 1083,
+    "test_licit": 15587,
+    "test_total": 16670,
+    "weighted_overall_prevalence": 0.06496701,
+    "weighted_prev_pct": 6.4967,
+    "unweighted_mean_perstep_prev": 0.0677443,
+    "unweighted_prev_pct": 6.7744,
+    "reported_6_50_pct_source": "weighted overall: 1083/16670",
+    "reported_6_77_pct_source": "unweighted mean of 15 per-step rates",
+    "per_step": {
+      "35": {
+        "ill": 182,
+        "total": 1341,
+        "prevalence": 0.13571961222967935
+      },
+      "36": {
+        "ill": 33,
+        "total": 1708,
+        "prevalence": 0.019320843091334895
+      },
+      "37": {
+        "ill": 40,
+        "total": 498,
+        "prevalence": 0.08032128514056225
+      },
+      "38": {
+        "ill": 111,
+        "total": 756,
+        "prevalence": 0.14682539682539683
+      },
+      "39": {
+        "ill": 81,
+        "total": 1183,
+        "prevalence": 0.06846999154691462
+      },
+      "40": {
+        "ill": 112,
+        "total": 1211,
+        "prevalence": 0.09248554913294797
+      },
+      "41": {
+        "ill": 116,
+        "total": 1132,
+        "prevalence": 0.10247349823321555
+      },
+      "42": {
+        "ill": 239,
+        "total": 2154,
+        "prevalence": 0.11095636025998143
+      },
+      "43": {
+        "ill": 24,
+        "total": 1370,
+        "prevalence": 0.017518248175182483
+      },
+      "44": {
+        "ill": 24,
+        "total": 1591,
+        "prevalence": 0.01508485229415462
+      },
+      "45": {
+        "ill": 5,
+        "total": 1221,
+        "prevalence": 0.004095004095004095
+      },
+      "46": {
+        "ill": 2,
+        "total": 712,
+        "prevalence": 0.0028089887640449437
+      },
+      "47": {
+        "ill": 22,
+        "total": 846,
+        "prevalence": 0.026004728132387706
+      },
+      "48": {
+        "ill": 36,
+        "total": 471,
+        "prevalence": 0.07643312101910828
+      },
+      "49": {
+        "ill": 56,
+        "total": 476,
+        "prevalence": 0.11764705882352941
+      }
+    }
+  },
+  "task4_drift": {
+    "perstep_analysis": {
+      "29": {
+        "partition": "val",
+        "n": 1174,
+        "illicit": 329,
+        "prevalence": 0.2802,
+        "recall_050": 0.921,
+        "precision_050": 0.9806,
+        "median_score_illicit": 0.86,
+        "median_score_licit": 0.02
+      },
+      "30": {
+        "partition": "val",
+        "n": 524,
+        "illicit": 83,
+        "prevalence": 0.1584,
+        "recall_050": 0.8554,
+        "precision_050": 0.9861,
+        "median_score_illicit": 0.87,
+        "median_score_licit": 0.01
+      },
+      "31": {
+        "partition": "val",
+        "n": 710,
+        "illicit": 106,
+        "prevalence": 0.1493,
+        "recall_050": 0.9245,
+        "precision_050": 0.98,
+        "median_score_illicit": 0.78,
+        "median_score_licit": 0.03
+      },
+      "32": {
+        "partition": "val",
+        "n": 1323,
+        "illicit": 342,
+        "prevalence": 0.2585,
+        "recall_050": 0.9532,
+        "precision_050": 0.9909,
+        "median_score_illicit": 0.86,
+        "median_score_licit": 0.05
+      },
+      "33": {
+        "partition": "val",
+        "n": 441,
+        "illicit": 23,
+        "prevalence": 0.0522,
+        "recall_050": 0.7391,
+        "precision_050": 1.0,
+        "median_score_illicit": 0.88,
+        "median_score_licit": 0.01
+      },
+      "34": {
+        "partition": "val",
+        "n": 515,
+        "illicit": 37,
+        "prevalence": 0.0718,
+        "recall_050": 0.8108,
+        "precision_050": 1.0,
+        "median_score_illicit": 0.71,
+        "median_score_licit": 0.02
+      },
+      "35": {
+        "partition": "test",
+        "n": 1341,
+        "illicit": 182,
+        "prevalence": 0.1357,
+        "recall_050": 0.9011,
+        "precision_050": 0.9939,
+        "median_score_illicit": 0.89,
+        "median_score_licit": 0.03
+      },
+      "36": {
+        "partition": "test",
+        "n": 1708,
+        "illicit": 33,
+        "prevalence": 0.0193,
+        "recall_050": 0.8485,
+        "precision_050": 0.9655,
+        "median_score_illicit": 0.88,
+        "median_score_licit": 0.03
+      },
+      "37": {
+        "partition": "test",
+        "n": 498,
+        "illicit": 40,
+        "prevalence": 0.0803,
+        "recall_050": 0.525,
+        "precision_050": 0.9545,
+        "median_score_illicit": 0.5,
+        "median_score_licit": 0.02
+      },
+      "38": {
+        "partition": "test",
+        "n": 756,
+        "illicit": 111,
+        "prevalence": 0.1468,
+        "recall_050": 0.8468,
+        "precision_050": 1.0,
+        "median_score_illicit": 0.87,
+        "median_score_licit": 0.04
+      },
+      "39": {
+        "partition": "test",
+        "n": 1183,
+        "illicit": 81,
+        "prevalence": 0.0685,
+        "recall_050": 0.7654,
+        "precision_050": 0.9538,
+        "median_score_illicit": 0.53,
+        "median_score_licit": 0.02
+      },
+      "40": {
+        "partition": "test",
+        "n": 1211,
+        "illicit": 112,
+        "prevalence": 0.0925,
+        "recall_050": 0.5089,
+        "precision_050": 0.95,
+        "median_score_illicit": 0.505,
+        "median_score_licit": 0.06
+      },
+      "41": {
+        "partition": "test",
+        "n": 1132,
+        "illicit": 116,
+        "prevalence": 0.1025,
+        "recall_050": 0.819,
+        "precision_050": 0.9896,
+        "median_score_illicit": 0.595,
+        "median_score_licit": 0.06
+      },
+      "42": {
+        "partition": "test",
+        "n": 2154,
+        "illicit": 239,
+        "prevalence": 0.111,
+        "recall_050": 0.7113,
+        "precision_050": 0.9827,
+        "median_score_illicit": 0.88,
+        "median_score_licit": 0.03
+      },
+      "43": {
+        "partition": "test",
+        "n": 1370,
+        "illicit": 24,
+        "prevalence": 0.0175,
+        "recall_050": 0.0,
+        "precision_050": null,
+        "median_score_illicit": 0.13,
+        "median_score_licit": 0.06
+      },
+      "44": {
+        "partition": "test",
+        "n": 1591,
+        "illicit": 24,
+        "prevalence": 0.0151,
+        "recall_050": 0.0417,
+        "precision_050": 0.1429,
+        "median_score_illicit": 0.145,
+        "median_score_licit": 0.08
+      },
+      "45": {
+        "partition": "test",
+        "n": 1221,
+        "illicit": 5,
+        "prevalence": 0.0041,
+        "recall_050": 0.0,
+        "precision_050": 0.0,
+        "median_score_illicit": 0.08,
+        "median_score_licit": 0.04
+      },
+      "46": {
+        "partition": "test",
+        "n": 712,
+        "illicit": 2,
+        "prevalence": 0.0028,
+        "recall_050": 0.5,
+        "precision_050": 0.1667,
+        "median_score_illicit": 0.36,
+        "median_score_licit": 0.03
+      },
+      "47": {
+        "partition": "test",
+        "n": 846,
+        "illicit": 22,
+        "prevalence": 0.026,
+        "recall_050": 0.0,
+        "precision_050": null,
+        "median_score_illicit": 0.06,
+        "median_score_licit": 0.04
+      },
+      "48": {
+        "partition": "test",
+        "n": 471,
+        "illicit": 36,
+        "prevalence": 0.0764,
+        "recall_050": 0.0,
+        "precision_050": 0.0,
+        "median_score_illicit": 0.06,
+        "median_score_licit": 0.02
+      },
+      "49": {
+        "partition": "test",
+        "n": 476,
+        "illicit": 56,
+        "prevalence": 0.1176,
+        "recall_050": 0.0179,
+        "precision_050": 0.2,
+        "median_score_illicit": 0.08,
+        "median_score_licit": 0.02
+      }
+    },
+    "feature_shift": {
+      "top5_features_by_abs_mean_diff": [
+        {
+          "feature": "feature_108",
+          "val_mean": 0.1361,
+          "test_mean": 1.0403,
+          "abs_diff": 0.9043,
+          "rel_diff_in_val_stds": 0.9525
+        },
+        {
+          "feature": "feature_110",
+          "val_mean": 0.1042,
+          "test_mean": 0.9276,
+          "abs_diff": 0.8234,
+          "rel_diff_in_val_stds": 1.0102
+        },
+        {
+          "feature": "feature_107",
+          "val_mean": 0.0793,
+          "test_mean": 0.817,
+          "abs_diff": 0.7378,
+          "rel_diff_in_val_stds": 0.9561
+        },
+        {
+          "feature": "feature_101",
+          "val_mean": 0.4607,
+          "test_mean": 1.1368,
+          "abs_diff": 0.676,
+          "rel_diff_in_val_stds": 2.2188
+        },
+        {
+          "feature": "feature_104",
+          "val_mean": 0.4746,
+          "test_mean": 1.1482,
+          "abs_diff": 0.6736,
+          "rel_diff_in_val_stds": 3.9253
+        }
+      ],
+      "mean_abs_diff_across_all_165_features": 0.1305,
+      "max_abs_diff": 0.9043
+    },
+    "illicit_score_val_p50": 0.86,
+    "illicit_score_test_p50": 0.76,
+    "verified_claims": [
+      "Test mean illicit prevalence (unweighted) is 2.39x lower than val.",
+      "Illicit class score p50 drops from 0.86 (val) to 0.76 (test).",
+      "6/15 test time-steps have prevalence below 5%."
+    ],
+    "plausible_claims": [
+      "Later Bitcoin epochs (steps 35-49) may have different transaction graph topology."
+    ],
+    "unresolved_claims": [
+      "Whether feature shift is caused by graph topology changes or data collection artifacts.",
+      "Whether specific illicit subgraphs are structurally novel vs training distribution."
+    ]
+  },
+  "task5_live_service": {
+    "service_status": {
+      "model_loaded": true,
+      "model_name": "RandomForest_v1.1.0",
+      "version": "v1.1.0",
+      "network": "bitcoin",
+      "algorithm": "RandomForest",
+      "features_count": 165,
+      "optimal_threshold": 0.42,
+      "metrics": {
+        "validation_metrics": {
+          "threshold_applied": 0.5,
+          "illicit_precision": 0.986,
+          "illicit_recall": 0.9174,
+          "illicit_f1": 0.9505,
+          "licit_precision": 0.9802,
+          "licit_recall": 0.9968,
+          "licit_f1": 0.9884,
+          "accuracy": 0.9812,
+          "balanced_accuracy": 0.9571,
+          "macro_f1": 0.9694,
+          "confusion_matrix": {
+            "true_negatives": 3755,
+            "false_positives": 12,
+            "false_negatives": 76,
+            "true_positives": 844
+          },
+          "class_distribution": {
+            "total_samples": 4687,
+            "illicit_count": 920,
+            "licit_count": 3767,
+            "positive_prevalence": 0.1963
+          },
+          "average_precision": 0.9837,
+          "pr_auc_trapezoidal": 0.9844,
+          "roc_auc": 0.9936
+        },
+        "test_metrics_default_threshold": {
+          "threshold_applied": 0.5,
+          "illicit_precision": 0.9481,
+          "illicit_recall": 0.6408,
+          "illicit_f1": 0.7647,
+          "licit_precision": 0.9756,
+          "licit_recall": 0.9976,
+          "licit_f1": 0.9865,
+          "accuracy": 0.9744,
+          "balanced_accuracy": 0.8192,
+          "macro_f1": 0.8756,
+          "confusion_matrix": {
+            "true_negatives": 15549,
+            "false_positives": 38,
+            "false_negatives": 389,
+            "true_positives": 694
+          },
+          "class_distribution": {
+            "total_samples": 16670,
+            "illicit_count": 1083,
+            "licit_count": 15587,
+            "positive_prevalence": 0.065
+          },
+          "average_precision": 0.7652,
+          "pr_auc_trapezoidal": 0.7682,
+          "roc_auc": 0.917
+        },
+        "test_metrics_tuned_threshold": {
+          "threshold_applied": 0.42,
+          "illicit_precision": 0.8276,
+          "illicit_recall": 0.6916,
+          "illicit_f1": 0.7535,
+          "licit_precision": 0.9788,
+          "licit_recall": 0.99,
+          "licit_f1": 0.9844,
+          "accuracy": 0.9706,
+          "balanced_accuracy": 0.8408,
+          "macro_f1": 0.8689,
+          "confusion_matrix": {
+            "true_negatives": 15431,
+            "false_positives": 156,
+            "false_negatives": 334,
+            "true_positives": 749
+          },
+          "class_distribution": {
+            "total_samples": 16670,
+            "illicit_count": 1083,
+            "licit_count": 15587,
+            "positive_prevalence": 0.065
+          },
+          "average_precision": 0.7652,
+          "pr_auc_trapezoidal": 0.7682,
+          "roc_auc": 0.917
+        }
+      },
+      "evaluation_limitations": "Supervised benchmark model trained on Bitcoin Elliptic graph features. Scores represent model-derived statistical anomaly priority, NOT definitive criminal proof. Must NOT be directly applied to Ethereum or cross-chain state without validated calibration.",
+      "training_timestamp": "2026-10-17T20:26:49.422900+00:00"
+    },
+    "registry_loads_file": "model_randomforest_v1.1.0.joblib",
+    "version_correct": true,
+    "threshold_correct": true,
+    "controlled_test_zero": {
+      "tx_id": "AUDIT_CTRL_ZERO_v2",
+      "model_version": "v1.1.0",
+      "risk_score": 0.01,
+      "prediction": "licit"
+    },
+    "controlled_test_mean": {
+      "tx_id": "AUDIT_CTRL_MEAN_v2",
+      "risk_score": 0.0,
+      "prediction": "licit"
+    }
+  },
+  "task6_tests": {
+    "command": "python -m pytest backend/tests/ -v --tb=short",
+    "returncode": 0,
+    "passed": 23,
+    "failed": 0,
+    "all_pass": true,
+    "stdout_tail": "SSED [ 69%]\nbackend/tests/test_ingestion.py::test_duplicate_transaction_suppression PASSED [ 73%]\nbackend/tests/test_ingestion.py::test_network_separation_enforcement PASSED [ 78%]\nbackend/tests/test_ml.py::test_evaluation_metrics_calculation PASSED     [ 82%]\nbackend/tests/test_ml.py::test_dummy_baseline_pr_auc_equals_prevalence PASSED [ 86%]\nbackend/tests/test_ml.py::test_model_registry_and_active_model_loading PASSED [ 91%]\nbackend/tests/test_ml.py::test_inference_service_prediction PASSED       [ 95%]\nbackend/tests/test_ml.py::test_inference_dimension_mismatch_rejection PASSED [100%]\n\n============================== warnings summary ===============================\n..\\..\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\Pratik\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 23 passed, 1 warning in 3.66s ========================\n"
+  },
+  "meta": {
+    "report_type": "final_evidence_and_reproducibility_check",
+    "generated_at": "2026-10-17T20:48:48.177016+00:00",
+    "python_version": "3.11.9",
+    "sklearn_version": "1.9.1",
+    "numpy_version": "2.4.6",
+    "model_artifact": "model_randomforest_v1.1.0.joblib",
+    "no_retraining": true,
+    "no_test_set_tuning": true,
+    "no_label_modification": true,
+    "previous_reports_preserved": true
+  }
+}

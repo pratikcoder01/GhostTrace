@@ -1,0 +1,356 @@
+{
+  "audit_type": "independent_recomputation",
+  "generated_at": "2026-10-17T20:43:05.483541+00:00",
+  "model_loaded": "RandomForest v1.1.0",
+  "model_class": "RandomForestClassifier",
+  "artifact_path": "C:\\Users\\Pratik\\Documents\\foss\\backend\\models\\model_randomforest_v1.1.0.joblib",
+  "scaler_fitted_on_train_only": true,
+  "scaler_mean_vs_train_max_diff": 0.0,
+  "split_verified": {
+    "train_steps": "1-28",
+    "val_steps": "29-34",
+    "test_steps": "35-49",
+    "train_n": 25207,
+    "val_n": 4687,
+    "test_n": 16670,
+    "train_illicit": 2542,
+    "val_illicit": 920,
+    "test_illicit": 1083,
+    "no_overlap": true
+  },
+  "live_service": {
+    "version": "v1.1.0",
+    "threshold": 0.42,
+    "version_ok": true,
+    "threshold_ok": true
+  },
+  "recomputed_test_050": {
+    "label": "test@0.50",
+    "threshold": 0.5,
+    "confusion_matrix": {
+      "TN": 15549,
+      "FP": 38,
+      "FN": 389,
+      "TP": 694
+    },
+    "illicit_precision": 0.948087,
+    "illicit_recall": 0.640813,
+    "illicit_f1": 0.764738,
+    "licit_f1": 0.986455,
+    "accuracy": 0.974385,
+    "balanced_accuracy": 0.819187,
+    "macro_f1": 0.875597,
+    "average_precision_score": 0.765227,
+    "pr_auc_trapezoidal": 0.768183,
+    "roc_auc": 0.917009
+  },
+  "recomputed_test_042": {
+    "label": "test@0.42",
+    "threshold": 0.42,
+    "confusion_matrix": {
+      "TN": 15431,
+      "FP": 156,
+      "FN": 334,
+      "TP": 749
+    },
+    "illicit_precision": 0.827624,
+    "illicit_recall": 0.691597,
+    "illicit_f1": 0.753521,
+    "licit_f1": 0.984371,
+    "accuracy": 0.970606,
+    "balanced_accuracy": 0.840795,
+    "macro_f1": 0.868946,
+    "average_precision_score": 0.765227,
+    "pr_auc_trapezoidal": 0.768183,
+    "roc_auc": 0.917009
+  },
+  "recomputed_val_050": {
+    "label": "val@0.50",
+    "threshold": 0.5,
+    "confusion_matrix": {
+      "TN": 3755,
+      "FP": 12,
+      "FN": 75,
+      "TP": 845
+    },
+    "illicit_precision": 0.985998,
+    "illicit_recall": 0.918478,
+    "illicit_f1": 0.951041,
+    "licit_f1": 0.988548,
+    "accuracy": 0.981438,
+    "balanced_accuracy": 0.957646,
+    "macro_f1": 0.969795,
+    "average_precision_score": 0.983709,
+    "pr_auc_trapezoidal": 0.984358,
+    "roc_auc": 0.993606
+  },
+  "recomputed_val_042": {
+    "label": "val@0.42",
+    "threshold": 0.42,
+    "confusion_matrix": {
+      "TN": 3745,
+      "FP": 22,
+      "FN": 57,
+      "TP": 863
+    },
+    "illicit_precision": 0.975141,
+    "illicit_recall": 0.938043,
+    "illicit_f1": 0.956233,
+    "licit_f1": 0.989563,
+    "accuracy": 0.983145,
+    "balanced_accuracy": 0.966102,
+    "macro_f1": 0.972898,
+    "average_precision_score": 0.983709,
+    "pr_auc_trapezoidal": 0.984358,
+    "roc_auc": 0.993606
+  },
+  "all_metadata_checks_pass": true,
+  "score_distributions": {
+    "val_illicit": {
+      "partition": "val-illicit",
+      "n": 920,
+      "mean": 0.784315,
+      "std": 0.180458,
+      "p5": 0.36,
+      "p25": 0.73,
+      "p50": 0.86,
+      "p75": 0.89,
+      "p95": 0.92,
+      "frac_above_042": 0.938043,
+      "frac_above_050": 0.918478
+    },
+    "val_licit": {
+      "partition": "val-licit",
+      "n": 3767,
+      "mean": 0.05249,
+      "std": 0.078009,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p50": 0.02,
+      "p75": 0.07,
+      "p95": 0.21,
+      "frac_above_042": 0.00584,
+      "frac_above_050": 0.003186
+    },
+    "test_illicit": {
+      "partition": "test-illicit",
+      "n": 1083,
+      "mean": 0.588966,
+      "std": 0.330858,
+      "p5": 0.05,
+      "p25": 0.25,
+      "p50": 0.76,
+      "p75": 0.89,
+      "p95": 0.91,
+      "frac_above_042": 0.691597,
+      "frac_above_050": 0.640813
+    },
+    "test_licit": {
+      "partition": "test-licit",
+      "n": 15587,
+      "mean": 0.078113,
+      "std": 0.094657,
+      "p5": 0.0,
+      "p25": 0.01,
+      "p50": 0.04,
+      "p75": 0.1,
+      "p95": 0.29,
+      "frac_above_042": 0.010008,
+      "frac_above_050": 0.002438
+    }
+  },
+  "timestep_prevalence": [
+    {
+      "time_step": 29,
+      "partition": "val",
+      "total": 1174,
+      "illicit": 329,
+      "prevalence": 0.2802,
+      "median_score_illicit": 0.86
+    },
+    {
+      "time_step": 30,
+      "partition": "val",
+      "total": 524,
+      "illicit": 83,
+      "prevalence": 0.1584,
+      "median_score_illicit": 0.87
+    },
+    {
+      "time_step": 31,
+      "partition": "val",
+      "total": 710,
+      "illicit": 106,
+      "prevalence": 0.1493,
+      "median_score_illicit": 0.78
+    },
+    {
+      "time_step": 32,
+      "partition": "val",
+      "total": 1323,
+      "illicit": 342,
+      "prevalence": 0.2585,
+      "median_score_illicit": 0.86
+    },
+    {
+      "time_step": 33,
+      "partition": "val",
+      "total": 441,
+      "illicit": 23,
+      "prevalence": 0.0522,
+      "median_score_illicit": 0.88
+    },
+    {
+      "time_step": 34,
+      "partition": "val",
+      "total": 515,
+      "illicit": 37,
+      "prevalence": 0.0718,
+      "median_score_illicit": 0.71
+    },
+    {
+      "time_step": 35,
+      "partition": "test",
+      "total": 1341,
+      "illicit": 182,
+      "prevalence": 0.1357,
+      "median_score_illicit": 0.89
+    },
+    {
+      "time_step": 36,
+      "partition": "test",
+      "total": 1708,
+      "illicit": 33,
+      "prevalence": 0.0193,
+      "median_score_illicit": 0.88
+    },
+    {
+      "time_step": 37,
+      "partition": "test",
+      "total": 498,
+      "illicit": 40,
+      "prevalence": 0.0803,
+      "median_score_illicit": 0.5
+    },
+    {
+      "time_step": 38,
+      "partition": "test",
+      "total": 756,
+      "illicit": 111,
+      "prevalence": 0.1468,
+      "median_score_illicit": 0.87
+    },
+    {
+      "time_step": 39,
+      "partition": "test",
+      "total": 1183,
+      "illicit": 81,
+      "prevalence": 0.0685,
+      "median_score_illicit": 0.53
+    },
+    {
+      "time_step": 40,
+      "partition": "test",
+      "total": 1211,
+      "illicit": 112,
+      "prevalence": 0.0925,
+      "median_score_illicit": 0.505
+    },
+    {
+      "time_step": 41,
+      "partition": "test",
+      "total": 1132,
+      "illicit": 116,
+      "prevalence": 0.1025,
+      "median_score_illicit": 0.595
+    },
+    {
+      "time_step": 42,
+      "partition": "test",
+      "total": 2154,
+      "illicit": 239,
+      "prevalence": 0.111,
+      "median_score_illicit": 0.88
+    },
+    {
+      "time_step": 43,
+      "partition": "test",
+      "total": 1370,
+      "illicit": 24,
+      "prevalence": 0.0175,
+      "median_score_illicit": 0.13
+    },
+    {
+      "time_step": 44,
+      "partition": "test",
+      "total": 1591,
+      "illicit": 24,
+      "prevalence": 0.0151,
+      "median_score_illicit": 0.145
+    },
+    {
+      "time_step": 45,
+      "partition": "test",
+      "total": 1221,
+      "illicit": 5,
+      "prevalence": 0.0041,
+      "median_score_illicit": 0.08
+    },
+    {
+      "time_step": 46,
+      "partition": "test",
+      "total": 712,
+      "illicit": 2,
+      "prevalence": 0.0028,
+      "median_score_illicit": 0.36
+    },
+    {
+      "time_step": 47,
+      "partition": "test",
+      "total": 846,
+      "illicit": 22,
+      "prevalence": 0.026,
+      "median_score_illicit": 0.06
+    },
+    {
+      "time_step": 48,
+      "partition": "test",
+      "total": 471,
+      "illicit": 36,
+      "prevalence": 0.0764,
+      "median_score_illicit": 0.06
+    },
+    {
+      "time_step": 49,
+      "partition": "test",
+      "total": 476,
+      "illicit": 56,
+      "prevalence": 0.1176,
+      "median_score_illicit": 0.08
+    }
+  ],
+  "f1_drop_analysis": {
+    "val_f1_050": 0.951041,
+    "test_f1_050": 0.764738,
+    "absolute_drop": 0.186303,
+    "relative_drop_pct": 19.59,
+    "val_mean_prevalence": 0.161733,
+    "test_mean_prevalence": 0.06774,
+    "prevalence_ratio_val_over_test": 2.3876,
+    "test_steps_below_5pct": 6,
+    "root_causes": [
+      "Test prevalence (0.0677) ~2.4x lower than val (0.1617); more FN at threshold 0.50.",
+      "Illicit score distribution shift: val p50=0.8600 vs test p50=0.7600.",
+      "Temporal distribution drift in graph features across later time-steps (35-49).",
+      "No post-hoc test-set tuning was performed \u2014 evaluation integrity preserved."
+    ]
+  },
+  "average_precision_method": {
+    "function": "sklearn.metrics.average_precision_score",
+    "source_file": "C:\\Users\\Pratik\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\sklearn\\utils\\_param_validation.py",
+    "integral_type": "step-function (authoritative, not trapezoidal)",
+    "test_ap_step": 0.765227,
+    "test_ap_trap": 0.768183
+  },
+  "disclaimer": "Independent audit recomputing metrics from saved model and scaler without any retraining, label modification, or test-set tuning. Scores are statistical anomaly priority derived from Bitcoin Elliptic graph features only. NOT validated for Ethereum or live attacks."
+}
