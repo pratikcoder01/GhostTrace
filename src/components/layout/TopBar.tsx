@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Bell, Settings, User, RefreshCw, AlertCircle, CheckCircle2, Radio, Activity, Clock, Sun, Moon } from 'lucide-react';
+import { Bell, Settings, User, RefreshCw, AlertCircle, CheckCircle2, Radio, Activity, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { api, parseApiError } from '@/api/client';
 import { HealthResponse } from '@/types/api';
@@ -16,26 +16,7 @@ export const TopBar: React.FC<TopBarProps> = ({ sidebarCollapsed, onMobileMenuOp
   const [health, setHealth] = useState<HealthResponse | null>(null);
   const [healthError, setHealthError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    return (localStorage.getItem('ghosttrace_theme') as 'dark' | 'light') || 'dark';
-  });
   const { connectionStatus, providerStatus, lastEventTime } = useWebSocket();
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'light') {
-      root.classList.add('light');
-      root.setAttribute('data-theme', 'light');
-    } else {
-      root.classList.remove('light');
-      root.removeAttribute('data-theme');
-    }
-    localStorage.setItem('ghosttrace_theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
 
   const fetchHealth = async () => {
     setRefreshing(true);
@@ -149,21 +130,7 @@ export const TopBar: React.FC<TopBarProps> = ({ sidebarCollapsed, onMobileMenuOp
         </div>
       )}
 
-      <div className="flex items-center gap-1.5">
-        {/* Modern Startup Level Light / Dark Switcher */}
-        <button
-          onClick={toggleTheme}
-          className="relative flex items-center justify-center p-2 rounded-lg text-slate-400 hover:text-cyan-400 dark:hover:text-cyan-300 hover:bg-slate-800/60 transition-all duration-200 border border-transparent hover:border-slate-700/60"
-          title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-          aria-label="Toggle theme"
-        >
-          {theme === 'dark' ? (
-            <Sun className="w-4.5 h-4.5 text-amber-300 hover:rotate-45 transition-transform" />
-          ) : (
-            <Moon className="w-4.5 h-4.5 text-indigo-600 hover:-rotate-12 transition-transform" />
-          )}
-        </button>
-
+      <div className="flex items-center gap-1">
         <button
           className="relative text-slate-400 hover:text-slate-200 p-1.5 rounded hover:bg-slate-800 transition-colors"
           aria-label="Notifications"
