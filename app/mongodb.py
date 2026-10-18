@@ -87,10 +87,17 @@ class MongoDBManager:
 
             self.create_indexes()
 
-        except (ConnectionFailure, ServerSelectionTimeoutError) as ce:
+        except (ConnectionFailure, ServerSelectionTimeoutError, PyMongoError, Exception) as ce:
             logger.error(f"MongoDB connection failed to {masked}: {ce}")
+            logger.warning("Falling back to safe in-memory mongomock so application stays alive in degraded/diagnostic mode.")
+            self.client = mongomock.MongoClient()
+            self._is_mock = True
             self._connected = False
-            raise RuntimeError(f"Unable to connect to MongoDB at {masked}: {str(ce)}")
+            self.async_client = None
+            try:
+                self.create_indexes()
+            except Exception:
+                pass
 
     def disconnect(self):
         """Closes all database connections gracefully."""
